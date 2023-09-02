@@ -1,6 +1,6 @@
 import React from 'react'
-import { Card } from '../pages/Card'
-import { items } from '../data/ProductData'
+import { Card } from '../pages/Card';
+import { items } from '../data/ProductData';
 
 export const Products = ({increment}) => {
   return (
