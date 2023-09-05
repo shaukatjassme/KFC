@@ -500,7 +500,9 @@ h2{
   box-shadow: none !important;
   background-color: #3ea38b !important;
 }
-
+.cart-img{
+  width: 200px;
+}
 /* custom-end */
 
 @media screen and (max-width: 620px) {
