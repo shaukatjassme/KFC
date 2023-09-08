@@ -3,6 +3,7 @@ import React from 'react';
 export const CartView = ({ cartCount, selectedProducts, handlePlusButtonClick, handleMinusButtonClick, handleDeleteButtonClick }) => {
   return (
     <div>
+      
       <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div className="offcanvas-header">
           <h5 className="offcanvas-title text-center" id="offcanvasRightLabel">Cart Details</h5>
@@ -13,7 +14,7 @@ export const CartView = ({ cartCount, selectedProducts, handlePlusButtonClick, h
           {selectedProducts.length > 0 ? (
             selectedProducts.map((product, index) => (
               <div key={index}>
-                <img src={product.image} className='cart-img' alt={product.title} />
+                <img src={product.image} className='cart-img' alt={product.image} />
                 <p>{product.title}</p>
                 <p>{product.desp}</p>
                 <div className='d-flex my-auto algo-class'>
@@ -48,6 +49,7 @@ export const CartView = ({ cartCount, selectedProducts, handlePlusButtonClick, h
           )}
         </div>
       </div>
+      {/* /// */}
     </div>
   );
 };
