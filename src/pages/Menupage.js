@@ -75,12 +75,22 @@ export const Menupage = () => {
       setSelectedProducts(updatedProducts);
     }
   };
-
   const handleDeleteButtonClick = (productToDelete) => {
     const updatedProducts = selectedProducts.filter((product) => product.id !== productToDelete.id);
     setSelectedProducts(updatedProducts);
     setCartCount((prevCartCount) => prevCartCount - 1);
+
+    // Check if there are no products left
+    if (updatedProducts.length === 0) {
+      // Use a state variable to trigger a "refresh" by changing its value
+      setRefreshPage((prevValue) => !prevValue);
+      window.location.reload();
+    }
+    
   };
+
+  const [refreshPage, setRefreshPage] = useState(false);
+
 
   const closeModal = () => {
     setShowModal(false);
@@ -92,15 +102,14 @@ export const Menupage = () => {
       <Header cartCount={cartCount} />
       <Category />
       <Slider />
-      {selectedProducts.length > 0 ? ( // Conditional rendering based on cart count
+      {selectedProducts.length > 0 && (
         <CartView
           selectedProducts={selectedProducts}
           handlePlusButtonClick={handlePlusButtonClick}
           handleMinusButtonClick={handleMinusButtonClick}
           handleDeleteButtonClick={handleDeleteButtonClick}
+          refreshPage={refreshPage} // Add the delete button click handler
         />
-      ) : (
-        <p>Your cart is empty. Add some items to your cart to continue shopping.</p>
       )}
 
       <Products increment={increment} />
