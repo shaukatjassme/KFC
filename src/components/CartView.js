@@ -1,7 +1,6 @@
 import React from 'react';
 
-export const CartView = ({ cartCount, selectedProducts, handlePlusButtonClick,handleMinusButtonClick }) => {
-
+export const CartView = ({ cartCount, selectedProducts, handlePlusButtonClick, handleMinusButtonClick, handleDeleteButtonClick }) => {
   return (
     <div>
       <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -20,7 +19,7 @@ export const CartView = ({ cartCount, selectedProducts, handlePlusButtonClick,ha
                 <div className='d-flex my-auto algo-class'>
                   <button
                     className='btn btn-primary algo-btn'
-                    onClick={() => handlePlusButtonClick(product)} // Call the function to increment the quantity
+                    onClick={() => handlePlusButtonClick(product)}
                   >
                     <i className="bi bi-plus algo-icon"></i>
                   </button>
@@ -32,9 +31,16 @@ export const CartView = ({ cartCount, selectedProducts, handlePlusButtonClick,ha
                   >
                     <i className="bi bi-dash algo-icon"></i>
                   </button>
-                 {/* Display the updated quantity here */}
+                  <span><b> &nbsp;-&nbsp; </b></span>
+                  <button
+                    className='btn btn-danger algo-btn'
+                    onClick={() => handleDeleteButtonClick(product)}
+                  >
+                    <i className="bi bi-trash-fill algo-icon"></i>
+                  </button>
                 </div>
-                <p>Total Price: ${product.totalPrice || product.price}</p> 
+                <p>Quantity: {product.quantity}</p>
+                <p>Total Price: ${product.totalPrice || product.price}</p>
               </div>
             ))
           ) : (

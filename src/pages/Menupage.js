@@ -76,6 +76,11 @@ const handleMinusButtonClick = (product) => {
   }
 };
 
+const handleDeleteButtonClick = (productToDelete) => {
+  const updatedProducts = selectedProducts.filter((product) => product.id !== productToDelete.id);
+  setSelectedProducts(updatedProducts);
+  setCartCount((prevCartCount) => prevCartCount - 1);
+};
 
   const closeModal = () => {
     setShowModal(false);
@@ -88,7 +93,8 @@ const handleMinusButtonClick = (product) => {
       <Category />
       <Slider />
       {selectedProducts.length > 0 && (
-         <CartView selectedProducts={selectedProducts} handlePlusButtonClick={handlePlusButtonClick} handleMinusButtonClick={handleMinusButtonClick}   /> // Pass the array of selected products
+         <CartView selectedProducts={selectedProducts} handlePlusButtonClick={handlePlusButtonClick} 
+         handleMinusButtonClick={handleMinusButtonClick} handleDeleteButtonClick={handleDeleteButtonClick}  /> // Pass the array of selected products
       )}
       <Products increment={increment} />
       <GetOrganic organicitem={organicitem} />
