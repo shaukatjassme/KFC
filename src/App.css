@@ -503,6 +503,20 @@ h2{
 .cart-img{
   width: 200px;
 }
+.algo-class{
+  align-items: center;
+  width: 27%;
+    margin: auto;
+}
+.algo-btn {
+  background: #3ea38b;
+  border-color: #3ea38b;
+  box-shadow: none;
+  outline: 0;
+}
+.alog-icon{
+  font-size: 20px;
+}
 /* custom-end */
 
 @media screen and (max-width: 620px) {

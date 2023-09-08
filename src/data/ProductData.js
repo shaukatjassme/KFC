@@ -15,7 +15,7 @@ export const items=[
         desp:"Our signature Zinger but Bigger! Double Zinger fillet.",
         image:"https://www.kfcpakistan.com/images/33685b40-0461-11ee-911c-497570899609-Mighty_variant_0-2023-06-06115641.png"
     },  {
-        id:2,
+        id:3,
         title:"Hot Wings Bucket",
         price:500,
         desp:"10 Pcs of our Signature Hot & Crispy Wings sandwiched",

@@ -33,10 +33,46 @@ const increment = (item) => {
       </div>
     );
     setShowModal(true);
-  } else {
+    
+  }
+ 
+   else {
     // Handle the case when the item is already in the cart (e.g., show a message)
     setMessage('This item is already in your cart.'); // Update the message accordingly
     setShowModal(true);
+  }
+
+  
+
+};
+
+
+
+const handlePlusButtonClick = (product) => {
+  const updatedProducts = selectedProducts.map((selectedProduct) =>
+    selectedProduct.id === product.id
+      ? {
+          ...selectedProduct,
+          quantity: (selectedProduct.quantity || 0) + 1,
+          totalPrice: (selectedProduct.totalPrice || 0) + product.price,
+        }
+      : selectedProduct
+  );
+  setSelectedProducts(updatedProducts);
+};
+
+const handleMinusButtonClick = (product) => {
+  if (product.quantity > 0) {
+    const updatedProducts = selectedProducts.map((selectedProduct) =>
+      selectedProduct.id === product.id
+        ? {
+            ...selectedProduct,
+            quantity: selectedProduct.quantity - 1,
+            totalPrice: selectedProduct.totalPrice - product.price,
+          }
+        : selectedProduct
+    );
+    setSelectedProducts(updatedProducts);
   }
 };
 
@@ -52,10 +88,11 @@ const increment = (item) => {
       <Category />
       <Slider />
       {selectedProducts.length > 0 && (
-        <CartView cartCount={cartCount} selectedProducts={selectedProducts} /> // Pass the array of selected products
+         <CartView selectedProducts={selectedProducts} handlePlusButtonClick={handlePlusButtonClick} handleMinusButtonClick={handleMinusButtonClick}   /> // Pass the array of selected products
       )}
       <Products increment={increment} />
       <GetOrganic organicitem={organicitem} />
+   
       {showModal && <MessageModal message={message} onClose={closeModal} />}
       <Footer />
     </>
