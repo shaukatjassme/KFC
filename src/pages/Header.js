@@ -1,6 +1,5 @@
 import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
 export const Header = ({ cartCount, increment }) => {
     return (
         <div className="container-fluid">
@@ -64,11 +63,12 @@ export const Header = ({ cartCount, increment }) => {
                                 </li>
                             </ul>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link">Exclusive Deals</a>
+                        <li className="list-group-item mb-2">
+                            {/* <Link to="/product/1" className='btn btn-primary'>Product1</Link> */}
                         </li>
+                    
                         <li className="nav-item">
-                            <a className="nav-link">About Our Food</a>
+                            <a className="nav-link"> Exclusive Deals</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link">Locate</a>
@@ -102,7 +102,7 @@ export const Header = ({ cartCount, increment }) => {
                                 >
                                     <i className="bi bi-cart3">
                                         {' '}
-                                        <sup>{cartCount}</sup>
+                                        <sup>{cartCount=0}</sup>
                                     </i>
                                 </button>
                             </div>
@@ -119,3 +119,5 @@ export const Header = ({ cartCount, increment }) => {
         </div>
     );
 };
+
+export default Header;

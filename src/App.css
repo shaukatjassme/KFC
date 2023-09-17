@@ -98,6 +98,7 @@ body{
 .pro-class {
  
   background-color: #000000 !important;
+  text-align: center;
 }
 .price-class {
   padding-inline: 26px !important;
@@ -130,9 +131,10 @@ body{
   left: -9px;
 }
 
-.card-img-top{
-  width: 200px;
+.card-img-top {
+  width: 150px;
   margin: auto;
+  margin-top: 56px;
 }
 .container-fluid{
 padding-left: 0  !important;
@@ -517,6 +519,109 @@ h2{
 .alog-icon{
   font-size: 20px;
 }
+/* Style for the product details container */
+.product-details {
+  display: flex;
+  align-items: center; /* Vertically center align items */
+  padding: 20px;
+  color: white;
+  width: 70%;
+  margin: auto;
+}
+
+/* Style for the product image container */
+.product-image {
+  flex: 1; /* Occupy one-third of the available width */
+  padding: 20px;
+}
+
+/* Style for the product image */
+.product-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style for the product info container */
+.product-info {
+  flex: 2; /* Occupy two-thirds of the available width */
+  padding: 20px;
+}
+
+/* Style for the product title */
+.product-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Style for product details like price, description, category, and rating */
+.product-info p {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* Add this CSS to your component's stylesheet or a global stylesheet */
+.product-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product-image {
+  max-width: 200px;
+  margin-right: 20px;
+}
+
+.product-info {
+  flex-grow: 1;
+}
+
+/* AddToCart buttons style */
+.AddToCart-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.AddToCart-btn-red {
+  background-color: red;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Style for the "Add to Cart" button */
+.product-info button {
+
+  color: #fff; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+.card-body{
+  text-align: center;
+}
+.card{
+  height: 400px;
+}
+/* Style for the "Add to Cart" button on hover */
+.product-info button:hover {
+  background-color: #0056b3; /* Darker blue color */
+}
+button.AddToCart-btn-red {
+  background: red !important;
+  margin-right: 25px;
+  font-weight: 600;
+}
+
 /* custom-end */
 
 @media screen and (max-width: 620px) {

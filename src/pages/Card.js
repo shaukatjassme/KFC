@@ -8,7 +8,7 @@ export const Card = ({ item, increment, toggleFavorite, isFavorite  }) => {
                 <img src={item.image} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{item.title}</h5>
-                    <p className="card-text">{item.desp}<br />
+                    <p className="card-text">{item.desp}
                         <span className="badge text-bg-info price-class">{item.price}</span>
                     </p>
                     <div className="wishlist favorite-icon" >

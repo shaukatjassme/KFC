@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import { Header } from './Header';
 import { Category } from './Category';
 import { Products } from '../components/Products';
 import { Footer } from '../components/Footer';
@@ -9,8 +8,15 @@ import GetOrganic from '../components/GetOrganic';
 import { organicitem } from '../data/OrganicCard';
 import MessageModal from '../components/MessageModal';
 import { CartView } from '../components/CartView';
+import Layout from '../components/Layout';
+import '../App.css'
+
 
 export const Menupage = () => {
+
+  
+  
+
   const [cartCount, setCartCount] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([]); // Initialize as an empty array
@@ -99,7 +105,8 @@ export const Menupage = () => {
 
   return (
     <>
-      <Header cartCount={cartCount} />
+    <Layout>
+     
       <Category />
       <Slider />
       {selectedProducts.length > 0 && (
@@ -117,6 +124,10 @@ export const Menupage = () => {
 
       {showModal && <MessageModal message={message} onClose={closeModal} />}
       <Footer />
+  
+      </Layout>
     </>
   );
 };
+
+export default Menupage;
