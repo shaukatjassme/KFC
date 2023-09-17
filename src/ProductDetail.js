@@ -4,7 +4,7 @@ import { get } from './data/ProductData'; // Import the get function with the co
 
 import { Category } from './pages/Category';
 import Layout from './components/Layout';
-import { Card } from './pages/Card';
+
 
 
 

@@ -25,7 +25,7 @@ const ProductPage = () => {
   }, []);
 
   return (
-    <div className="container mt-5 text-white">
+    <div className="container mt-5 text-white text-center">
       <h1>Product Page</h1>
       {loading ? (
         <p>Loading...</p>

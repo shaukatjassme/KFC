@@ -628,6 +628,9 @@ button.AddToCart-btn-red {
   .pro-class {
     display: grid;
   }
+  .card{
+    width: 22rem !important;
+  }
 }
 
 
